@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FreeWilling</title>
+</head>
+
+<body>
+    <form action="/newWill" method="post">
+
+        <label>Legal Name: </label> <input name="legalName" placeholder="name on passport or birth certificate">
+
+        <label>City of Residence: </label> <input name="cityOfResidence" placeholder="e.g. Auckland"> Executor(s) or Trustee(s)
+        <label>Executor 1: </label> <input name="ExecutorFullName" placeholder="Executor's Full Name"> <input name="ExecutorOccupation"
+            placeholder="Executor's Occupation">
+
+        <button class="addMoreExec">Add more Executor(s) or Trustee(s)</button>
+        {{!-- how to link the button to extra lines --}}
+
+        <div>
+            Administration:
+            <p>
+                a) Pay any debts owing/funeral expenses/administration expenses and taxes;</p>
+            <p>
+                b) <select name="" id="">(optional) Special Gift:
+                <label>person: </label> <input name="personToGift" placeholder="person to gift"></p>
+            <div>
+                <label>thing:</label> <input name="thingToGift" placeholder="thing to gift/bequest"></div>
+                </select>
+            <div>
+                <button type="submit">Add more gift</button></div>
+                 {{!-- how to link the button to extra lines --}}
+
+            c)
+        </div>
+        <div>
+        Residual Estate:
+    </form>
+        </div>
+</body>
+
+</html>
