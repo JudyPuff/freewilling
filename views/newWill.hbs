@@ -11,33 +11,56 @@
 <body>
     <form action="/newWill" method="post">
 
-        <label>Legal Name: </label> <input name="legalName" placeholder="name on passport or birth certificate">
+        <label>Legal Name:  <input name="legalName" placeholder="name on passport or birth certificate"></label>
+        <br>
+        <label>City of Residence:  <input name="cityOfResidence" placeholder="e.g. Auckland"> 
+        <br>
+        Executor(s) or Trustee(s)
+        <label>Executor 1:  
+            <input name="ExecutorFullName" placeholder="Executor's Full Name"> 
+            <input name="ExecutorOccupation"
+            placeholder="Executor's Occupation"></label>
+        
+          <label>Executor 2:  
+            <input name="ExecutorFullName" placeholder="Executor's Full Name"> 
+            <input name="ExecutorOccupation"
+            placeholder="Executor's Occupation"></label>
 
-        <label>City of Residence: </label> <input name="cityOfResidence" placeholder="e.g. Auckland"> Executor(s) or Trustee(s)
-        <label>Executor 1: </label> <input name="ExecutorFullName" placeholder="Executor's Full Name"> <input name="ExecutorOccupation"
-            placeholder="Executor's Occupation">
-
-        <button class="addMoreExec">Add more Executor(s) or Trustee(s)</button>
-        {{!-- how to link the button to extra lines --}}
-
-        <div>
-            Administration:
-            <p>
-                a) Pay any debts owing/funeral expenses/administration expenses and taxes;</p>
-            <p>
-                b) <select name="" id="">(optional) Special Gift:
-                <label>person: </label> <input name="personToGift" placeholder="person to gift"></p>
-            <div>
-                <label>thing:</label> <input name="thingToGift" placeholder="thing to gift/bequest"></div>
-                </select>
-            <div>
-                <button type="submit">Add more gift</button></div>
-                 {{!-- how to link the button to extra lines --}}
-
-            c)
-        </div>
-        <div>
-        Residual Estate:
+        Beneficiary/Beneficiaries:
+            <label>
+                <input type="radio" name="beneficiary" value="spouse">My spouse/partner <input type="text" placeholder="Legal Name">solely.
+                <br>
+                <input type="radio" value="children">All my children equally who survive me and attained the age of twenty (20) years. If any child dies before me but leaving a surviving child or children then such child or children shall taken the share of my estate (original and accruing) which his, her or their parent would have otherwise taken.
+                <br>
+                <input type="radio" name="beneficiary" value="sibling">My sibling <input type="text" placeholder="Legal Name">solely.
+                <br>
+                <input type="radio" name="beneficiary" value="siblings">My siblings <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivors equally or the survivor solely.  
+                <br>
+                <input type="radio" name="beneficiary" value="parents">My parents <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivor solely.
+            </label>
+        <label for="Residual beneficiary">
+            Residual Beneficiary/Beneficiaries:
+            If the above beneficary dies before me, I wish to gift my estate to:
+                
+                <br>
+                <input type="radio" value="children">All my children equally who survive me and attained the age of twenty (20) years. 
+                <br>
+                If any child dies before me but leaving a surviving child or children then such child or children shall taken the share of my estate (original and accruing) which his, her or their parent would have otherwise taken.
+                <br>
+                <input type="radio" name="beneficiary" value="spouse">My spouse/partner <input type="text" placeholder="Legal Name">solely.
+                <br>
+                <input type="radio" name="beneficiary" value="sibling">My sibling <input type="text" placeholder="Legal Name">solely.
+                <br>
+                <input type="radio" name="beneficiary" value="siblings">My siblings <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivors equally or the survivor solely.  
+                <br>
+                <input type="radio" name="beneficiary" value="parents">My parents <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivor solely.
+        </label>
+    <label for="bodily remains">
+        I wish my bodily remains to be
+        <input type="radio" name="remains" value="buried">buried at <input type="text" placeholder="specify place">
+        <input type="radio" name="remains" value="cremated">cremated and my ashes to be <input type="text" placeholder="e.g. scattered at Piha beach">
+    </label>
+    <button>Download My Free Will</button>
     </form>
         </div>
 </body>
