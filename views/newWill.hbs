@@ -5,64 +5,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FreeWilling</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Tangerine">
+    <title>Free Willing</title>
 </head>
 
 <body>
     <form action="/newWill" method="post">
+        <div class="container">
+            <div class="formContainer">
+                <label>Legal Name:  <input name="name" placeholder="name on passport or birth certificate"></label>
+                <br>
+                <label>City of Residence:  <input name="city" placeholder="e.g. Auckland"> 
+            
+            <div class="itemContainer">
+            Executor(s) or Trustee(s)
+            Executor 1:
+            <input name="executor1" placeholder="Executor 1's Full Name"> 
+            <input name="executor1city" placeholder="Executor 1's city of residence">
+            <input name="executor1occ" placeholder="Excutor 1's occupation">
 
-        <label>Legal Name:  <input name="legalName" placeholder="name on passport or birth certificate"></label>
-        <br>
-        <label>City of Residence:  <input name="cityOfResidence" placeholder="e.g. Auckland"> 
-        <br>
-        Executor(s) or Trustee(s)
-        <label>Executor 1:  
-            <input name="ExecutorFullName" placeholder="Executor's Full Name"> 
-            <input name="ExecutorOccupation"
-            placeholder="Executor's Occupation"></label>
-        
-          <label>Executor 2:  
-            <input name="ExecutorFullName" placeholder="Executor's Full Name"> 
-            <input name="ExecutorOccupation"
-            placeholder="Executor's Occupation"></label>
+            <br>
+            Executor 2:
+            <input name="Executor2" placeholder="Executor 2's Full Name"> 
+            <input name="executor2city" placeholder="Executor 2's city of residence">
+            <input name="executor2occ" laceholder="Excutor 2's occupation">
+            </div>
 
-        Beneficiary/Beneficiaries:
-            <label>
-                <input type="radio" name="beneficiary" value="spouse">My spouse/partner <input type="text" placeholder="Legal Name">solely.
-                <br>
-                <input type="radio" value="children">All my children equally who survive me and attained the age of twenty (20) years. If any child dies before me but leaving a surviving child or children then such child or children shall taken the share of my estate (original and accruing) which his, her or their parent would have otherwise taken.
-                <br>
-                <input type="radio" name="beneficiary" value="sibling">My sibling <input type="text" placeholder="Legal Name">solely.
-                <br>
-                <input type="radio" name="beneficiary" value="siblings">My siblings <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivors equally or the survivor solely.  
-                <br>
-                <input type="radio" name="beneficiary" value="parents">My parents <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivor solely.
-            </label>
-        <label for="Residual beneficiary">
+            <div class="itemContainer">
+            Beneficiary/Beneficiaries:
+            <br>
+            <input type="radio" name="beneficiary" value="my spouse/partner">My spouse/partner <input type="text" placeholder="Legal Name">solely.
+            <br>
+            <input type="radio" name="beneficiary" value="all my children equally, who survive me and attained the age of twenty (20) years. If any child dies before me but leaving a surviving child or children then such child or children shall taken the share of my estate (original and accruing) which his, her or their parent would have otherwise taken.">All my children equally. But if they die before me, my grandchildren who survive them.
+            <br>
+            <input type="radio" name="beneficiary" value="my sibling">My sibling <input type="text" placeholder="Legal Name">solely. 
+            {{!-- ask how to put solely at the end of the name --}}
+            <br>
+            <input type="radio" name="beneficiary" value="siblings">My siblings <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivors equally or the survivor solely.  
+            <br>
+            <input type="radio" name="beneficiary" value="parents">My parents <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivor solely.
+            </div>
+
+            <div class="itemContainer">
             Residual Beneficiary/Beneficiaries:
             If the above beneficary dies before me, I wish to gift my estate to:
-                
+            <br>
+            <input type="radio" name="resBen"value="all my children equally, who survive me and attained the age of twenty (20) years. If any child dies before me but leaving a surviving child or children then such child or children shall taken the share of my estate (original and accruing) which his, her or their parent would have otherwise taken.">All my children equally. But if they die before me, my grandchildren who survive them.
+            <br>
+            <input type="radio" name="resBen" value="my spouse/partner">my spouse/partner <input type="text" placeholder="Legal Name">solely.
+            <br>
+            <input type="radio" name="resBen" value="my sibling">my sibling <input type="text" placeholder="Legal Name">solely.
+            <br>
+            <input type="radio" name="resBen" value="my siblings">my siblings <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivors equally or the survivor solely.  
+            <br>
+            <input type="radio" name="resBen" value="my parents">my parents <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivor solely.
+            </div>
+            
+
+            <div class="itemContainer">
+            I wish my bodily remains to be
+            <br>
+            <input type="radio" name="remains" value="buried">buried at <input type="text" placeholder="specify place">
+            <br>
+            <input type="radio" name="remains" value="cremated">cremated and my ashes to be <input type="text" placeholder="e.g. scattered at Piha beach">
+            </div>
+
+            <div>
+                Witnesses:
                 <br>
-                <input type="radio" value="children">All my children equally who survive me and attained the age of twenty (20) years. 
+                Witness 1: <input name="witness1" placeholder="Witness 1 Legal Name"> of <input name="witness1city" placeholder="city of residence">, <input name="witness1occ" placeholder="occupation">
                 <br>
-                If any child dies before me but leaving a surviving child or children then such child or children shall taken the share of my estate (original and accruing) which his, her or their parent would have otherwise taken.
-                <br>
-                <input type="radio" name="beneficiary" value="spouse">My spouse/partner <input type="text" placeholder="Legal Name">solely.
-                <br>
-                <input type="radio" name="beneficiary" value="sibling">My sibling <input type="text" placeholder="Legal Name">solely.
-                <br>
-                <input type="radio" name="beneficiary" value="siblings">My siblings <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivors equally or the survivor solely.  
-                <br>
-                <input type="radio" name="beneficiary" value="parents">My parents <input type="text" placeholder="Legal Names">equally or if any of them predeceases me, to the survivor solely.
-        </label>
-    <label for="bodily remains">
-        I wish my bodily remains to be
-        <input type="radio" name="remains" value="buried">buried at <input type="text" placeholder="specify place">
-        <input type="radio" name="remains" value="cremated">cremated and my ashes to be <input type="text" placeholder="e.g. scattered at Piha beach">
-    </label>
-    <button>Download My Free Will</button>
-    </form>
+                Witness 2: <input name="witness2" placeholder="Witness 2 Legal Name"> of <input name="witness2city" placeholder="city of residence">, <input name="witness2occ" placeholder="occupation">
+            </div>
+            </div>
+
+            <div class=createButton>   
+            <button onclick="location.href='/html';">Create My Free Will</button>
+            </div>
+            
         </div>
+    </form>
+
 </body>
 
 </html>
