@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/will.css">
     <title>My Free Will</title>
 </head>
 <body>
     <div>
     <h1>THIS WILL</h1> 
     <br>
-    dated this__________________ day of _________________ 2018 is made by me {{name}}, of {{city}}, {{occupation}}.
+    dated this__________________ day of _________________________ 2018 is made by me {{name}} of {{city}}, {{occupation}}.
     <br>
     <ol>
         <li><strong><u>Earlier Wills</u></strong></li>
@@ -23,35 +24,34 @@
             <li><u>PAY</u> all debts, funeral and testamentary expenses and all duties payable upon the whole of my dutiable estate.</li>
             <li><u>GIFT</u> my residuary estate as I now direct.</li>
             </ol>
-
+        <br>
         <li><strong><u>Gift of Residue</u></strong></li>
-            <ol>
-            <li><u>I GIVE</u> my residual estate to my {{beneficiary}}</li>
+            <p><ol>
+            <li><u>I GIVE</u> my residual estate to {{beneficiary}} {{beneficiaryName}}</li>
             <li>In the event the above beneficiary predeceases me, <u>I GIVE</u> my residual estate to {{resBen}}</li>
-            </ol>
+            </ol></p>
         <li><strong><u>Funeral</u></strong></li>
             <p><u>I DIRECT</u> that my bodily remains be {{remains}}</p>
+        <br>
     </ol>
     <u>DATED</u> this__________________ day of _________________ 2018.
     <br>
-    <u>SIGNED</u> by {{name}}___________________________
-    <div>{{name}}</div>
     <br>
+    <u>SIGNED</u> by {{name}}___________________________
+                                <div>{{name}}</div>
     as his or her last will in our presence
     and attested by us in her presence:
-    
-    {{witness1}}
-    {{witness1occ}}
-    {{witness1city}}
+    <br>
+    <br>
+    {{witness1}}: ___________________________<br>
+    {{witness1occ}}: ________________________ <br>
+    {{witness1city}}:________________________ <br>
 
     <br>
 
-    {{witness2}}
-    {{witness2occ}}
-    {{witness2city}}
-
-    <br>
-    <button onclick="location.href=/newWill">Back to Editing</button>
+    {{witness2}}: ___________________________ <br>
+    {{witness2occ}}:_________________________ <br>
+    {{witness2city}}:________________________ <br>
 
     </div>
 </body>
