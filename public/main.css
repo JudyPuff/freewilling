@@ -5,12 +5,11 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    
+    margin: 0;
   } 
 
  .container{
-   width:100%;
-   height: 100%;
+   min-height: 100vh;
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -21,16 +20,61 @@ body {
  
 header {
     text-align: center;
-    font-style: italic;
+    font-family: 'Times New Roman', Times, serif
  }
 
-.h2 {
+ form {
+    /* Just to center the form on the page */
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* To see the outline of the form */
+  }
+  
+  form div + div {
+    margin-top: 1em;
+  }
+  
+  label {
+    /* To make sure that all labels have the same size and are properly aligned */
+    display: inline-block;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .button {
+    /* To position the buttons to the same position of the text fields */
+    /* same size as the label elements */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  button {
+    font-family: 'Tangerine', serif;
+    margin-left: .5em;
+    font-size: 2em;
+    border-radius: 0.5rem;
+    padding: .5rem;
+  }
+.h1 {
     color: #212020;
-    font-size: 3em;
-    font-family: 'Tangerine' serif;
+    font-size: 4em;
+    font-family: Arial;
 }
+
+p {
+    font-size: 1.5em;
+    align-items: center;
+    /* justify-content: center; */
+}
+
 ul {
     text-align: left;
+    font-size: 1.5em;
 }
 
 .bodyContainer {
@@ -39,10 +83,10 @@ ul {
 }
 
 #itemContainer {
-    flex-direction: row;
-    align-items: right;
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    width: 70%;
+    width: 100%;
 }
 
 /* .hide {
@@ -50,10 +94,11 @@ ul {
 } */
 
 #usefulWeb {
-    flex-direction: row;
-    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    width: 30%;
+    width: 100%;
     padding: 1rem;
     background-color: #ccc;
     border-radius: 0.5rem;

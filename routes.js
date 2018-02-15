@@ -22,7 +22,6 @@ router.get('/:id', (req, res) => {
     .then(user => {
       res.render('html', user)
     })
-    // .then(convert(user))
     .catch(err => {
       res.status(500).send('DATABASE ERROR: ' + err.message)
     })
@@ -30,34 +29,17 @@ router.get('/:id', (req, res) => {
 
 router.get('/pdf/:id', (req, res) => {
   const id = req.params.id
-  convert(`http://localhost:3000/${id}`, { disableSmartShrinking: true }).pipe(res)
+  convert(`http://localhost:3000/${id}`, { disableSmartShrinking: true, dpi: 600 }).pipe(res)
 })
-// router.post('/newWill', (req, res) => {
-//   return 
-//   const bodyText = req.body
-//   .select()
-//   console.log(bodyText)
-//   // req.flash(bodyText)
-//   // res.convert(bodyText)
-//   res.render('html', bodyText)
-
-// })
 
 router.post('/newWill', (req, res) => {
-  console.log(req.body)
   db.addUser(req.body)
-    .then(() => res.redirect('/html', req.body))
+    .then((id) => {
+      res.redirect('/pdf/' + id[0])
+    })
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
 })
-
-// router.get('/html', (req, res) => {
-//   db.getUsers()
-//     .then(users => {
-//       res.render('index', { users: users })
-//     })
-//     .catch(err => {
-//       res.status(500).send('DATABASE ERROR: ' + err.message)
-//     })
-// })
-
 
 module.exports = router

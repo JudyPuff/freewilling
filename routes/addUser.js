@@ -8,10 +8,11 @@ router.get('/', (req, res) => {
   res.render('newWill')
 })
 
-router.post('/', (req, res) => {
-  console.log(req.body)
+router.post('/newWill', (req, res) => {
+  return 
   db.addUser(req.body)
-    .then(() => res.redirect('/html', req.body))
+    .select()
+    res.render('html', req.body)
 })
 
 module.exports = router

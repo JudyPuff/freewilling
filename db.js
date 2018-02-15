@@ -3,28 +3,26 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 module.exports = {
-  getUser,
-  getUsers,
-  addUser,
-  getWill
-//   deleteUser
+    addUser,
+    getWill
+    //   deleteUser
 }
 
-function getUsers (testConn) {
-  const conn = testConn || connection
-  return conn('users').select()
-}
+// function getUsers (testConn) {
+//   const conn = testConn || connection
+//   return conn('users').select()
+// }
 
-function getUser (id, testConn) {
-  const conn = testConn || connection
-  return conn('users').where('id', id).first()
-}
+// function getUser (id, testConn) {
+//   const conn = testConn || connection
+//   return conn('users').where('id', id).first()
+// }
 
-function getWill (id, testConn) {
+function getWill(id, testConn) {
     const conn = testConn || connection
     return conn('users')
-      .where('id', id)
-      .select(
+        .where('id', id)
+        .select(
         'name',
         'city',
         'occupation',
@@ -43,18 +41,14 @@ function getWill (id, testConn) {
         'witness2',
         'witness2occ',
         'witness2city')
-      .first()
-  }
+        .first()
+}
 
-function addUser (body, redirecter) {
-  console.log(body)
-  return connection('user').select()
-    .returning('id')
-    .insert({ name:input.name})
-    .then(result => {
-      connection('html')
-        .insert({user_id: id[0], 
-            name: body.name, 
+function addUser(body, redirecter) {
+    console.log(body)
+    return connection('users')
+        .insert({
+            name: body.name,
             city: body.city,
             occupation: body.occupation,
             executor1: body.executor1,
@@ -65,15 +59,14 @@ function addUser (body, redirecter) {
             beneficiary: body.beneficiary,
             resBen: body.resBen,
             remains: body.remains,
-        })
-        .then(result => {
-            console.log(result)
-        
-        // .then(() => redirecter())
-    })
-})
-// function deleteUser (id) {
-//   return connection('users')
-//     .where('id', id)
-//     .del()
+            witness1: body.witness1,
+            witness1occ: body.witness1occ,
+            witness1city: body.witness1city,
+            witness2: body.witness2,
+            witness2occ: body.witness2occ,
+            witness2city: body.witness2city})
+    // function deleteUser (id) {
+    //   return connection('users')
+    //     .where('id', id)
+    //     .del()
 }
