@@ -13,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/dev-academy-challenges/boilerplate-knex.git"
   },
-  "author": "EDA",
-  "license": "ISC",
+  "author": "Judy Ting-Edwards",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dev-academy-challenges/boilerplate-knex/issues"
   },
@@ -24,14 +24,15 @@
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0",
     "knex": "^0.14.2",
+    "node-wkhtmltopdf": "^2.0.0",
     "react": "^16.2.0",
-    "sqlite3": "^3.1.13",
-    "wkhtmltopdf": "^0.3.4"
+    "sqlite3": "^3.1.13"
   },
   "devDependencies": {
     "cheerio": "^1.0.0-rc.2",
     "jest": "^22.1.4",
     "nodemon": "^1.14.11",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "wkhtmltopdf": "^0.3.4"
   }
 }
