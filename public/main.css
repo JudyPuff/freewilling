@@ -14,8 +14,9 @@ body {
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   background-color: rgba(164, 158, 147, 0.90);
-   padding: 3rem;
+   background-color: rgba(164, 158, 147, 0.90) !important;
+   padding: 6rem;
+   width: 100%;
  }
  
 header {
